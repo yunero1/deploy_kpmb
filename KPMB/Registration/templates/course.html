@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table, tr,th,td{border: solid; 
+            border-collapse: collapse;}
+        a{color: blue;}
+        img{ width: 100px;
+            height:100px}
+    </style>
+</head>
+<body>
+    <h1>{% load static %} <img src="{% static "picture/kpmb.png" %}" alt="logo" />WELCOME TO KPM BERANANG</h1>
+    <h2>COURSE</h2>
+    
+    {% if data == 1 %}
+        <table>
+            <tr>
+                <th>CODE</th>
+                <th>DESCRIPTION</th>
+                <th>UPDATE?</th>
+                <th>DELETE?</th>
+            </tr>
+            {% for data in all_course %}
+                <tr>
+                    <td>{{data.code}}</td>
+                    <td>{{data.description}}</td>
+                    <td><a href="update_course/{{data.code}}">Update</a> </td>
+                    <td><a href="delete_course/{{data.code}}">Delete</a> </td>
+                </tr>
+            {% endfor %}
+        </table>
+    {% elif data == 0 %}
+        <p>No course register</p>
+    {% endif %}
+
+    
+    <br><br><br>
+
+
+    <a href="new_course">New Course</a>
+    <br>
+    <a href="/KPMB/">Home</a>
+</body>
+</html>

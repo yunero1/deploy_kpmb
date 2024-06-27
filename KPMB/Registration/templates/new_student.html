@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>WELCOME TO KPM BERANANG</h1>
+    <h2>NEW STUDENT</h2>
+    <br><br>
+    <form action="new_student" method="post">
+        {% csrf_token %}
+        Id  <input type="text" name="id"><br><br>
+        Name <input type="text" name="name"><br><br>
+        Address <input type="text" name="address"><br><br>
+        Phone <input type="text" name="phone"><br><br>
+        Course Code 
+        <select name="c_course">
+            <option value="Choose">Choose one</option>
+            {% for data in all_course %}
+                <option value={{data.code}}>{{data.description}}</option>
+            {% endfor %}
+        </select>
+        <input type="submit" value="SAVE">
+    </form>
+    <br><br>
+    {{message}}
+
+    <br><br>
+    <a href="/KPMB/student/">Back</a>
+</body>
+</html>

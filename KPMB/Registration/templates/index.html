@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{background-color: cyan;}
+        img{display:block;
+            width:  80%;
+            height:150px;}
+    </style>
+</head>
+<body>
+   <center> {% load static %} <img src="{% static "picture/1marakpmb-merah.png" %}" alt="logo" /></center>
+    
+    <ul>
+        <li>COURSE
+            <ul>
+                <li><a href="course">Course</a></li>
+                <li><a href="search_course">search course</a> </li>
+            </ul>
+        </li>
+        <li>STUDENT
+            <ul>
+                <li><a href="student">Student</a> </li>
+                <li><a href="search_student">search student</a> </li>
+            </ul>
+        </li>
+    </ul>
+    
+</body>
+</html>
